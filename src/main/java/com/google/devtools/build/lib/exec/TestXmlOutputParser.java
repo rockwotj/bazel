@@ -168,7 +168,7 @@ public final class TestXmlOutputParser {
     // This is ugly. For Historical Reasons, we have to check whether the number
     // contains a decimal point or not. If it does, the number is expressed in
     // milliseconds, otherwise, in seconds.
-    if (string.contains(".")) {
+    if (string.contains(".") || string.contains("e")) {
       return Math.round(Float.parseFloat(string) * 1000);
     } else {
       return Long.parseLong(string);
